@@ -42,14 +42,47 @@ public class Game {
         locChoice = input.nextInt();
       }
 
-      System.out.println("\n \n \n");
+      System.out.println("\n \n ");
+
       switch (locChoice) {
         case 1:
+          System.out.println("-----------");
           location = new House(player);
           break;
+        case 2:
+          System.out.println("-----------");
+
+          location = new Cave(player);
+          break;
+        case 3:
+          System.out.println("-----------");
+
+          location = new Forest(player);
+          break;
+        case 4:
+          System.out.println("-----------");
+
+          location = new River(player);
+          break;
         case 5:
+          System.out.println("-----------");
+
           location = new Store(player);
+          break;
       }
+
+      if (location.getClass().getName().equals("House")) {
+        if (
+          player.getInv().isFood() &&
+          player.getInv().isFirewood() &&
+          player.getInv().isWater()
+        ) {
+          System.out.println("You win!!");
+          break;
+        }
+      }
+
+      System.out.println(location.getName());
 
       location.getLocation();
     }

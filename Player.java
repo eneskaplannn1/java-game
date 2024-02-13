@@ -31,7 +31,7 @@ public class Player {
 
   private int characterMenu() {
     System.out.println("Hello " + this.name);
-    System.out.println("Please select a character");
+    System.out.println("\n Please select a character");
     System.out.println("1-Samurai ,\t Damage ; 5 ,\t Health 21 ;\t Money ; 15");
     System.out.println("2-Archer ,\t Damage ; 7 ,\t Health 18 ;\t Money ; 20");
     System.out.println("3-Knight ,\t Damage ; 8 ,\t Health 24 ;\t Money ; 5");
@@ -63,6 +63,10 @@ public class Player {
     setTotalHealth(health);
     setcName(cName);
     setMoney(money);
+  }
+
+  public int getTotalDamage() {
+    return this.getDamage() + this.inv.getDamage();
   }
 
   public int getTotalHealth() {
